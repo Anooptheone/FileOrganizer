@@ -134,6 +134,8 @@ def onclick(load_screen,entry1):
         load_screen.config(text="your files are organized.")
         messagebox.showinfo("congratulation on your clean computer")
         entry1.delete(0,'end')
+    except PermissionError:
+        messagebox.showerror("You don't have permission to access this folder.")
     except Exception as e:
         # Hide loading message on error
         load_screen.config(text="")
